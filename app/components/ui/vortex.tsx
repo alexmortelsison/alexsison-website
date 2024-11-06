@@ -41,7 +41,7 @@ export const Vortex = (props: VortexProps) => {
   let tick = 0;
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
-  const center: [number, number] = [0, 0];
+  let center: [number, number] = [0, 0];
 
   const TAU: number = 2 * Math.PI;
   const rand = (n: number): number => n * Math.random();
@@ -61,6 +61,7 @@ export const Vortex = (props: VortexProps) => {
 
       if (ctx) {
         resize(canvas);
+        center = [canvas.width / 2, canvas.height / 2]; // Set initial center
         initParticles();
         draw(canvas, ctx);
       }
@@ -80,7 +81,7 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const x = rand(canvas.width);
+    const x = center[0] + randRange(canvas.width * 0.2); // Start near the center
     const y = center[1] + randRange(rangeY);
     const vx = 0;
     const vy = 0;
@@ -151,7 +152,7 @@ export const Vortex = (props: VortexProps) => {
     particleProps[i4] = vy;
     particleProps[i5] = life;
 
-    (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
+    if (checkBounds(x, y, canvas) || life > ttl) initParticle(i);
   };
 
   const drawParticle = (
@@ -186,6 +187,7 @@ export const Vortex = (props: VortexProps) => {
 
     canvas.width = innerWidth;
     canvas.height = innerHeight;
+    center = [canvas.width / 2, canvas.height / 2]; // Update center on resize
   };
 
   const renderGlow = (
@@ -227,7 +229,7 @@ export const Vortex = (props: VortexProps) => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [setup]);
+  }, []);
 
   return (
     <div
