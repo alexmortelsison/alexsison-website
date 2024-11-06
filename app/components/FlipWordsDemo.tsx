@@ -8,7 +8,7 @@ export function FlipWordsDemo() {
     <div className="text-2xl md:text-5xl font-bold text-white dark:text-neutral-400 tracking-tighter">
       <div className="text-4xl md:text-9xl mb-2">Welcome.</div>
       <div className="text-gray-300">
-        I'm Alex, a
+        I&apos;m Alex, a
         <FlipWords words={words} />
         developer based in Japan.
       </div>

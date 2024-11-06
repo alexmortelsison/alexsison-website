@@ -2,7 +2,7 @@
 import React from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { CgPhone } from "react-icons/cg";
-import { Mail, MapPinMinusInside, Pin } from "lucide-react";
+import { Mail, MapPinMinusInside } from "lucide-react";
 
 export function BackgroundGradientDemo() {
   return (

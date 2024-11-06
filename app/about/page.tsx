@@ -1,11 +1,6 @@
 import React from "react";
 import { Vortex } from "../components/ui/vortex";
-import {
-  IconBrandMongodb,
-  IconBrandNextjs,
-  IconBrandSupabase,
-  IconBrandTailwind,
-} from "@tabler/icons-react";
+import { IconBrandNextjs } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function AboutPage() {

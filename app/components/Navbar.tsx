@@ -1,5 +1,5 @@
 import { AiFillGithub } from "react-icons/ai";
-import { CgCodeSlash, CgTwitter } from "react-icons/cg";
+import { CgCodeSlash } from "react-icons/cg";
 import Link from "next/link";
 import React from "react";
 

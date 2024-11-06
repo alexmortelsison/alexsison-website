@@ -1,7 +1,6 @@
 import React from "react";
 import { FlipWordsDemo } from "./FlipWordsDemo";
 import { MovingBorderDemo } from "./MovingBorderDemo";
-import Footer from "./Footer";
 
 export default function Hero() {
   return (
@@ -12,7 +11,7 @@ export default function Hero() {
         </div>
         <div>
           <p className="text-gray-300 lg:mt-10 text-base md:text-lg px-1 md:px-8">
-            I'm a full-stack developer passionate about building smooth,
+            I&apos;m a full-stack developer passionate about building smooth,
             scalable applications with{" "}
             <span className="text-xl font-bold">NextJS</span> and{" "}
             <span className="text-xl font-bold">React</span>. With a strong
